@@ -11,6 +11,22 @@ import useAuth from "./hooks/useAuth";
 import useMenu from "./hooks/useMenu";
 import Router from "./routes";
 import ThemeProvider from "./theme";
+import axiosInstance from "./utils/axios";
+const fetchBrandSettings = async () => {
+  try {
+    const { data, status } = await axiosInstance("api/company-logos");
+    if (status === 200) {
+      const { logo, side_bar_logo, favicon } = data.data;
+      if (logo) {
+        localStorage.setItem("logo", logo);
+        localStorage.setItem("side_bar_logo", side_bar_logo);
+        localStorage.setItem("favicon", favicon);
+      }
+    }
+  } catch (err) {
+    console.error(err);
+  }
+};
 
 export default function App() {
   useMenu();
@@ -21,7 +37,9 @@ export default function App() {
       return;
     }
   }, [user]);
-
+  useEffect(() => {
+    fetchBrandSettings();
+  }, []);
   return (
     <ThemeProvider>
       <ThemeColorPresets>
