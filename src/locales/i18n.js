@@ -4,6 +4,7 @@ import enLocales from "./en.json";
 import esLocales from "./es.json";
 import ptLocales from "./pt.json";
 import deLocales from "./de.json";
+import jaLocales from "./ja.json";
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -11,6 +12,7 @@ i18n.use(initReactI18next).init({
     es: esLocales,
     pt: ptLocales,
     de: deLocales,
+    ja: jaLocales,
   },
   lng: "en",
 

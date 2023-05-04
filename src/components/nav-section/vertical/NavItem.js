@@ -51,7 +51,7 @@ export function NavItemRoot({
       )}
       <ListItemTextStyle
         disableTypography
-        primary={capitalCase(translate(title))}
+        primary={translate(title)}
         isCollapse={isCollapse}
       />
       {!isCollapse && (
@@ -103,7 +103,7 @@ export function NavItemSub({ item, open = false, active = false, onOpen }) {
   const renderContent = (
     <>
       <DotIcon active={active} />
-      <ListItemText disableTypography primary={capitalCase(translate(title))} />
+      <ListItemText disableTypography primary={translate(title)} />
       {info && info}
       {children && <ArrowIcon open={open} />}
     </>
