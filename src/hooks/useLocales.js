@@ -27,7 +27,7 @@ const LANGS = [
     icon: "/assets/icons/flags/ic_flag_de.svg",
   },
   {
-    label: "Japan",
+    label: "Japanese",
     value: "ja",
     icon: "/assets/icons/flags/ic_flag_jp.svg",
   },
