@@ -26,6 +26,11 @@ const LANGS = [
     value: "de",
     icon: "/assets/icons/flags/ic_flag_de.svg",
   },
+  {
+    label: "Japan",
+    value: "ja",
+    icon: "/assets/icons/flags/ic_flag_jp.svg",
+  },
 ];
 export default function useLocales() {
   const { i18n, t: translate } = useTranslation();
